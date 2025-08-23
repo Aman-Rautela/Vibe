@@ -1,12 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import Vid from "../assets/Vid1.mp4";
+// import { useNavigate } from "react-router-dom";
+import Vid from "../../assets/Vid1.mp4";
+import Dashboard from "../Screens/Dashboard";
+import React, { useState } from "react";
+import SignUp from "./SignUp";
+
 
 export default function SignIn() {
-  const navigate = useNavigate();
 
-  function handleLogin() {
-    navigate("/");
+  const[loggedIn, setLoggedIn] = useState(false);
+  const[signUP, setSignUp] = useState(false);
+
+  function handelSignUp(e){
+    e.preventDefault();
+    setSignUp(true);
+  }
+  if(signUP){
+    return<SignUp />
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    setLoggedIn(true)
   };
+  if(loggedIn){
+    return <Dashboard />
+;  }
+
 
   return (
     <>
@@ -47,18 +66,23 @@ export default function SignIn() {
                 <span className="text-black px-2">OR</span>
                 <hr className="flex-grow border-t-2 border-gray-300" />
            </div>
-           <button
+           <input
+            className="w-full border-none bg-gray-100 rounded-xl px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-pink-500"
+            type="tel"
+            placeholder="Enter your phone number"
+            name="phone" />
+           {/* <button
            className="w-full flex justify-center items-center gap-2 bg-gray-100 rounded-2xl p-2">
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"
             className="w-5 h-5" />
             Continue with Google?
-           </button>
+           </button> */}
             <p className="w-full text-xs flex justify-center items-center gap-2">
           Don&apos;t have an account?
           <button
           type="button"
             className="text-xs text-gray-600 hover:text-purple-500 cursor-pointer"
-            onClick={() => navigate("/SignUp")}
+            onClick={handelSignUp}
           >
             Sign Up
           </button>

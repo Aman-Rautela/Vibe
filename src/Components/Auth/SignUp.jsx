@@ -1,11 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import Vid2 from "../assets/Vid2.mp4"
+import Vid2 from "../../assets/Vid2.mp4"
+import { useState } from "react";
+import SignIn from "./SignIn";
 
 export default function SignUp(){
     const navigate = useNavigate();
+    const[signIn, SetSignIn] = useState(false);
+
+    function handelSignIn(e){
+        e.preventDefault();
+        SetSignIn(true);
+    }
 
     function handleSignUp(){
         navigate("/");
+    }
+
+    if(signIn){
+        return<SignIn />
     }
 
 
@@ -13,7 +25,7 @@ export default function SignUp(){
         <>
         <div className=" min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
             <h2 className="text-center font-bold text-white mt-0.5 text-xl">
-        <span className="font-extrabold text-4xl text-yellow-300">VIBE</span> Welcomes You</h2>
+                New In<span className="font-extrabold text-4xl text-yellow-300">VIBE ?</span> </h2>
             <div className="w-[800px] h-[500px] flex  overflow-hidden3 bg-white">
                         <div className="shadow-2xl p-4 bg-white  max-w-96 flex flex-col justify-center items-center">
          <form className="space-y-4 ">
@@ -22,6 +34,11 @@ export default function SignUp(){
                 type="text"
                 placeholder="Enter your Name"
                 name="name" />
+            <input
+                className="w-full border-none bg-gray-100 rounded-xl px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-pink-500"
+                type="tel"
+                placeholder="Enter your phone number"
+                name="phone" />
             <input
                 className="w-full border-none bg-gray-100 rounded-xl px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-pink-500"
                 type="email"
@@ -55,7 +72,7 @@ export default function SignUp(){
           <button
           type="button"
             className="text-xs text-gray-600 hover:text-purple-500 cursor-pointer"
-            onClick={() => navigate("/SignIn")}
+            onClick={handelSignIn}
           >
             Sign In
           </button>
