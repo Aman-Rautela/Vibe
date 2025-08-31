@@ -3,11 +3,13 @@ import Vid from "../../assets/Vid1.mp4";
 import Dashboard from "../Screens/Dashboard";
 import React, { useState } from "react";
 import SignUp from "./SignUp";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SignIn() {
 
-  const[loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  // const[loggedIn, setLoggedIn] = useState(false);
   const[signUP, setSignUp] = useState(false);
 
   function handelSignUp(e){
@@ -20,11 +22,11 @@ export default function SignIn() {
 
   function handleLogin(e) {
     e.preventDefault();
-    setLoggedIn(true)
+    navigate("/Dashboard");
   };
-  if(loggedIn){
-    return <Dashboard />
-;  }
+  // if(loggedIn){
+  //   return <Dashboard />
+  // }
 
 
   return (
