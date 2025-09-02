@@ -1,11 +1,10 @@
 import logo from "../../assets/Vibe_Logo.png";
-import profile from "../../assets/Pic.jpg";
+// import profile from "../../assets/Pic.jpg";
 import { useNavigate } from "react-router-dom";
 export default function Header(){
 
     const navigate = useNavigate();
     const list = [
-        {id: 1, type: "pic", name: "profileImg", img: profile},
         {id: 2, type: "route", name: "Logout", path: "/"}
     ]
 
@@ -23,13 +22,13 @@ export default function Header(){
                 <h2 className="text-white font-bold text-2xl">Vibe It UP</h2>
             </div>
             {/* <hr className="border-gray-400 my-"/> */}
-            <div className="flex w-full items-center justify-between bg-white px-4 py-2">
+            <div className="flex w-full items-center justify-between bg-black px-4 py-2">
                 <div className="w-24 h-16">
                     <img className="px-3 py-0" src={logo} alt="vibelogo"/>
                 </div>
                 <div className="flex flex-1 justify-center items-center px-4">
                     <input 
-                    className="border-2 border-gray-300 rounded-xl w-full h-10 px-2 py-1" 
+                    className="text-white bg-gray-900 border-2 border-gray-900 rounded-xl w-full h-10 px-2 py-1" 
                     type="text" 
                     placeholder="Search by artist" />
                 </div>
@@ -41,16 +40,14 @@ export default function Header(){
                                     <button 
                                     onClick={() => handleCLick(item)}
                                     className="w-full gap-4 flex items-center px-3 py-2">
-                                        {item.type === "pic" && (
+                                        {/* {item.type === "pic" && (
                                             <img
                                             src= {item.img}
                                             alt= {item.name}
                                             className="rounded-full border w-12 h-12"
                                             />
-                                        )}
-                                        {item.type !== "pic" && (
-                                            <span className="text-lg">{item.name}</span>
-                                        )}
+                                        )} */}
+                                            <span className="text-lg text-white">{item.name}</span>
                                     </button>
                                 </li>
                          ))}
