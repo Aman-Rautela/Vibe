@@ -1,22 +1,38 @@
+import Card from "../Card/Card";
 import Header from "./Header";
 import { Sidebar } from "./Sidebar";
 
-export default function Dashboard(){
-    return(
-        <>
-            <div className="flex flex-col h-screen">
-                <Header />
-                <div className=" flex flex-1">
-                    <Sidebar />
-                    <div className="flex-1 p-4 bg-black">
-                        <div className=" bg-gray-900 w-full h-full rounded-2xl">
-                            <h1 className="text-4xl font-bold text-purple-600">
-                            Welcome to Dashboard!
-                        </h1>
-                        </div>
-                    </div>
-                </div>
+export default function Dashboard() {
+  return (
+    <div className="flex flex-col h-screen">
+      {/* Header */}
+      <Header />
+
+      {/* Main layout */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Main content */}
+        <div className="flex-1 bg-black p-6 overflow-y-auto">
+          <div className="bg-gray-900 w-full min-h-full rounded-2xl p-6">
+            <div className="grid grid-cols-3 gap-6">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
             </div>
-        </>
-    )
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
