@@ -1,7 +1,7 @@
 # Vibe
 
 ## Features
-- Sign In / Sign Up with Firebase
+- Sign In / Sign Up 
 - TailwindCSS UI
 - Responsive Layout
 

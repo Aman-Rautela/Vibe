@@ -47,7 +47,7 @@ export default function Header(){
                                             className="rounded-full border w-12 h-12"
                                             />
                                         )} */}
-                                            <span className="text-lg text-white">{item.name}</span>
+                                            <span className="text-lg text-white cursor-pointer">{item.name}</span>
                                     </button>
                                 </li>
                          ))}

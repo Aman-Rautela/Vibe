@@ -27,9 +27,9 @@ function handleCLick(item){
                         <li key={item.id}>
                             <button
                             onClick={() => handleCLick(item)}
-                            className={`w-full text-center px-3 py-2 rounded-lg mt-6 transition-all duration-200 ease-in-out
+                            className={`w-full text-center px-3 py-2  mt-6 transition-all duration-200 ease-in-out
                                             ${activeId === item.id 
-                                            ? "text-purple-400 font-bold underline underline-offset-4" 
+                                            ? "text-white text-xl font-bold drop-shadow-lg" 
                                             : "text-white hover:text-purple-300 hover:scale-95"}
                                     `}>
                                     <span className="cursor-pointer text-l

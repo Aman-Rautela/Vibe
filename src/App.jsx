@@ -17,8 +17,8 @@ function App() {
 
 
           
-            <Route path ='/Dashboard' element = {<Dashboard/>}>
-              <Route index element = {<DashboardHome/>}/>
+            <Route path ='/Dashboard' element = {<Dashboard/>}> {/* CREATERD THIS A PARENT ROUTE consist of child pages */}
+              <Route index element = {<DashboardHome/>}/>       {/*Ths is the default cards section page*/}
               <Route path ='Liked' element = {<Liked/>}/>
               <Route path ='Saved' element = {<Saved/>}/>
               <Route path ='Playlist' element = {<Playlist/>}/>
