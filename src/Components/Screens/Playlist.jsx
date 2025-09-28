@@ -58,11 +58,11 @@ export default function Playlist(){
                     </span>
                     <button
                     onClick={() => {onDelete(folder.id)}}
-                    className="group absolute top-2 right-2 text-red-400 hover:text-red-900 text-lg
+                    className="group absolute top-2 right-2 text-red-400 hover:text-red-600 text-lg
                     "
                     >
-                        <span className="block group-hover:hidden transition-opacity duration-300">
-                            ✕
+                        <span className="block group-hover:hidden transition-opacity duration-300 cursor-pointer">
+                        ✕
                         </span>
                     </button>
                 </div>

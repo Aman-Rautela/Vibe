@@ -1,5 +1,19 @@
+import { useState } from "react";
+import PlayBox from "./PlayBox";
+
+
 export default function Card() {
+
+const[isPlaying, seIsPlaying] = useState(false);
+const[showBox, setShowBox] = useState(false);
+
+const togglePlay = () => {
+  if(!showBox) setShowBox(true);
+  seIsPlaying(!isPlaying);
+}
+
   return (
+    <>
     <div className="relative group w-56 h-60 shadow-2xl bg-black 
       rounded-xl hover:scale-95 transition-transform p-4 inline-block m-4 overflow-hidden">
       
@@ -10,13 +24,24 @@ export default function Card() {
       </div>
 
       <button
+      onClick={togglePlay}
         className="absolute bottom-4 right-4 bg-green-600 w-12 h-12 rounded-full 
         flex items-center justify-center text-white text-xl opacity-0 
         group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-green-300
         cursor-pointer"
       >
-        ▶
+        {isPlaying ? "\u23F8\uFE0E" : "▶"}
       </button>
     </div>
+
+    {showBox && (
+      <PlayBox
+      title = "My Song"
+      artist = "Artist Name"
+      isPlaying = {isPlaying}
+      onToggle = {togglePlay}
+      />
+    )}
+    </>
   );
 }
